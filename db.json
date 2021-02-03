@@ -1,0 +1,35 @@
+
+{
+  "pets": [
+    {
+      "id": 1,
+      "name": "Molly",
+      "age": 15,
+      "sex": "Female",
+      "typeOfAnimal": "Dog",
+      "breed": "West Highland Terrier",
+      "colour": "White",
+      "weightInKg": 11.5
+    },
+    {
+      "id": 2,
+      "name": "Bertie",
+      "age": 2,
+      "sex": "Male",
+      "typeOfAnimal": "Guinea pig",
+      "breed": "Crested short hair",
+      "colour": "Ginger and white",
+      "weightInKg": 1.2
+    },
+    {
+      "id": 3,
+      "name": "Winston",
+      "age": 2,
+      "sex": "Male",
+      "typeOfAnimal": "Guinea pig",
+      "breed": "Short/long hair cross",
+      "colour": "Black",
+      "weightInKg": 1.3
+    }
+  ]
+}
