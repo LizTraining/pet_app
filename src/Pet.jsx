@@ -5,6 +5,7 @@ import { CircularProgress } from "@material-ui/core";
 
 const Pet = () => {
     const { id } = useParams();
+    {console.log("Pet!")}
 
     const [petDetails, setPetDetails] = useState();
 
@@ -16,7 +17,7 @@ const Pet = () => {
           setPetDetails(responsePet);
           console.log(responsePet);
       });
-    }, [id]);
+    }, []);
 
     const { id:petId, name, age, sex, typeOfAnimal, breed, colour, weightInKg } = petDetails || {};
 

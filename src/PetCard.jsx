@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 
 const PetCard = (props) => {
 
+    {console.log("Pet card")}
     const {pet} = props;
     // eslint-disable-next-line
     const { id, name, age, sex, typeOfAnimal, breed, colour, weightInKg } = pet || {}

@@ -16,6 +16,7 @@ export default function App() {
           (<Router>
             <Switch>
               <Route exact path="/" children={<PetList />} />
+              {console.log("Clicked")}
               <Route path="/pet/:id" children={<Pet />} />
             </Switch>
           </Router>

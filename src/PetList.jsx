@@ -13,13 +13,13 @@ const PetList = () => {
       });
     }, []);
     
-    console.log(`Here we are: ${pets}`);
+    console.log(`Pet list: ${pets}`);
 
     return (
       <>{pets ? 
       (
       <div style = {{display: "flex", flexWrap: "wrap"}}>
-          {Object.keys(pets).map((petDetails) => (
+          {pets.map((petDetails) => (
             <PetCard petDetails={petDetails} />
           ))}
       </div>
