@@ -4,9 +4,9 @@ import { useHistory } from "react-router-dom";
 const PetCard = (props) => {
 
     {console.log("Pet card")}
-    const {pet} = props;
+    const {petDetails} = props;
     // eslint-disable-next-line
-    const { id, name, age, sex, typeOfAnimal, breed, colour, weightInKg } = pet || {}
+    const { id, name, age, sex, typeOfAnimal, breed, colour, weightInKg } = petDetails || {}
     let history = useHistory();
 
     return (
@@ -18,7 +18,7 @@ const PetCard = (props) => {
             }}
             onClick={() => history.push(`/pet/${id}`)}
         >
-            <h4> {`${name} is a ${typeOfAnimal}`} </h4>
+            <h4> {`${name} the ${typeOfAnimal}`} </h4>
         </div>
     );
 };

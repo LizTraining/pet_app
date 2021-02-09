@@ -14,7 +14,7 @@ const Pet = () => {
 
     useEffect(() => {
         axios
-        .get(`https://my-json-server.typicode.com/LizAston/pet_app_db/pets/?id=1`)
+        .get(`https://my-json-server.typicode.com/LizAston/pet_app_db/pets/?id=${id}`)
         .then((res) => {
           const responsePet = res.data;
           setPetDetails(responsePet);
@@ -22,13 +22,13 @@ const Pet = () => {
       });
     }, []);
 
-    const { id:petId, name, age, sex, typeOfAnimal, breed, colour, weightInKg } = petDetails || {};
+    const { id:petId, name, age, sex, typeOfAnimal, breed, colour, weightInKg } = petDetails?.length > 0 ? petDetails[0]:{};
 
     let history = useHistory();
 
 
     return (
-      <div key={petId}>
+      <div key={id}>
         {petDetails ? (
         <div> 
             {/*<button onClick={()=>{showPetList()}}> Return to list </button>*/}
@@ -41,9 +41,7 @@ const Pet = () => {
             <h1> {`Type: ${typeOfAnimal}`} </h1>
             <h1> {`Breed: ${breed}`} </h1>
             <h1> {`Colour: ${colour}`} </h1>
-            <h1> {`Weight (kg): ${weightInKg}`} </h1>
-
-            
+            <h1> {`Weight (kg): ${weightInKg}`} </h1> 
         </div>
         ) : (
             <CircularProgress />
