@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { CircularProgress } from "@material-ui/core";
-import {  BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import Bertie from "./Bertie.jpg";
 import Winston from "./Winston.jpg";
@@ -63,7 +62,7 @@ const Pet = () => {
             <h1> {`Weight (kg): ${weightInKg}`} </h1> 
             
 
-            <img src={whichImage(petId, image)} alt="Image" />            
+            <img src={whichImage(petId, image)} alt="" />            
         </div>
         ) : (
             <CircularProgress />
