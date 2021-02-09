@@ -7,7 +7,7 @@ const PetList = () => {
 
     const [pets, setPets] = useState();
     useEffect(() => {
-        axios.get(`https://cors-anywhere.herokuapp.com/https://my-json-server.typicode.com/LizAston/pet_app_db/pets`).then((res) => {
+        axios.get(`https://my-json-server.typicode.com/LizAston/pet_app_db/pets`).then((res) => {
           const responsePets = res.data;
           setPets(responsePets);
       });
