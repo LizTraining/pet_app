@@ -4,7 +4,24 @@ import axios from "axios";
 import { CircularProgress } from "@material-ui/core";
 import {  BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import Bertie from "./Bertie.jpg";
+import Winston from "./Winston.jpg";
+import Molly from "./Molly.jpg";
 
+
+const whichImage = (petId, image) => {
+  switch(petId) {
+    case 1:
+      image = Molly;
+      break;
+    case 2:
+      image = Bertie;
+      break;
+    default:
+      image = Winston;
+  }
+  return image;
+}
 
 const Pet = () => {
     const { id } = useParams();
@@ -26,6 +43,8 @@ const Pet = () => {
 
     let history = useHistory();
 
+    const image = Winston;
+
 
     return (
       <div key={id}>
@@ -42,6 +61,9 @@ const Pet = () => {
             <h1> {`Breed: ${breed}`} </h1>
             <h1> {`Colour: ${colour}`} </h1>
             <h1> {`Weight (kg): ${weightInKg}`} </h1> 
+            
+
+            <img src={whichImage(petId, image)} alt="Image" />            
         </div>
         ) : (
             <CircularProgress />
