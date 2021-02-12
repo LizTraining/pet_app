@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { CircularProgress } from "@material-ui/core";
-import PetCard from "./PetCard" 
+import PetCard from "./PetCard";
+import { Grid } from "@material-ui/core";
 
 const PetList = () => {
 
@@ -12,15 +13,15 @@ const PetList = () => {
           setPets(responsePets);
       });
     }, []);
-    
-    console.log(`Pet list: ${pets}`);
 
     return (
       <>{pets ? 
       (
       <div style = {{display: "flex", flexWrap: "wrap"}}>
           {pets.map((petDetails) => (
-            <PetCard petDetails={petDetails} />
+            <Grid item xs={12} sm={2}>
+              <PetCard petDetails={petDetails} />
+            </Grid>
           ))}
       </div>
       )

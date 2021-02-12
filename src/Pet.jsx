@@ -34,7 +34,6 @@ const Pet = () => {
         .then((res) => {
           const responsePet = res.data;
           setPetDetails(responsePet);
-          console.log(responsePet);
       });
     }, []);
 
