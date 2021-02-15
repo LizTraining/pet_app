@@ -55,9 +55,7 @@ const Pet = () => {
         {petDetails ? (
         <div> 
           <button onClick={() => history.push(`/`)}> Return to list </button>
-            <Grid container direction = "column">
-            <Grid item xs={0} sm={2} /> {/* Padding */}
-              <Grid item xs={12} sm={8}>
+            
                 <Card>
                   <h1> {`id: ${petId}`} </h1> 
                   <h1> {`Name: ${name}`} </h1>
@@ -70,9 +68,7 @@ const Pet = () => {
 
                   <img src={whichImage(petId, image)} alt="" />  
                </Card> 
-             </Grid> 
-             <Grid item xs={0} sm={2} /> {/* Padding */}
-           </Grid>         
+                    
         </div>
         ) : (
             <CircularProgress />

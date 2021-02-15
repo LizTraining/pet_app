@@ -5,6 +5,7 @@ import Pet from "./Pet";
 import {  BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Grid } from "@material-ui/core";
 import Header from "./Header";
+import Box from '@material-ui/core/Box';
 
 export default function App() {
   const [showPets, setShowPets] = useState(true);
@@ -15,18 +16,18 @@ export default function App() {
           {/* Header */}
           <Header />
         </Grid>
-      
+
         <Grid item xs={12}>
           {/* Show/hide pets button */}
-          <button onClick={() => setShowPets(!showPets)}>
-          { showPets ? "Show pets" : "Hide pets" }
-          </button> 
-        </Grid>
+          <Box p={2}>
+            <button onClick={() => setShowPets(!showPets)}>
+              { showPets ? "Show pets" : "Hide pets" }
+            </button> 
+         </Box>
         
-        <Grid item container>
+        
           {/* Pet cards */}
-          <Grid item xs={0} sm={2} /> {/* Padding */}
-          <Grid item xs={12} sm={8}>
+          <Grid item>
           { showPets ? "" :  
           (<Router>
             <Switch>
@@ -35,8 +36,7 @@ export default function App() {
             </Switch>
            </Router>
           )}
-          </Grid> 
-          <Grid item xs={0} sm={2} /> {/* Padding */}
+          </Grid>
         </Grid>
       </Grid>
     </div>

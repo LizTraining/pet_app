@@ -18,10 +18,16 @@ const PetList = () => {
     return (
       <>{pets ? 
       (
-      <div style = {{display: "flex", flexWrap: "wrap"}}>
+      <div>
+        <Grid container>
+        <Grid container justify="space-evenly">
           {pets.map((petDetails) => (
+            <Grid item xs={12} sm={2}>
               <PetCard petDetails={petDetails} />
+            </Grid>
           ))}
+        </Grid>
+        </Grid>
       </div>
       )
       : <CircularProgress />}
