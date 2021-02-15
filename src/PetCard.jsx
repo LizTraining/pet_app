@@ -1,5 +1,8 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import "./App.css";
+import Card from "@material-ui/core/Card";
+import CardHeader from "@material-ui/core/CardHeader";
 
 const PetCard = (props) => {
     
@@ -9,15 +12,10 @@ const PetCard = (props) => {
     let history = useHistory();
 
     return (
-        <div key={id} style={{ 
-            backgroundColor: "grey", 
-            margin: "10px", 
-            padding: "15px", 
-            width: "150px" 
-            }}
-            onClick={() => history.push(`/pet/${id}`)}
-        >
-            <h4> {`${name} the ${typeOfAnimal}`} </h4>
+        <div key={id} onClick={() => history.push(`/pet/${id}`)}>
+         <Card>
+           <h4> {`${name} the ${typeOfAnimal}`} </h4>
+         </Card>
         </div>
     );
 };

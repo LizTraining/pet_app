@@ -10,33 +10,33 @@ export default function App() {
   const [showPets, setShowPets] = useState(true);
   return (
     <div className="App">
-      
-
-
-
-
       <Grid container direction = "column">
         <Grid item>
+          {/* Header */}
           <Header />
         </Grid>
+      
+        <Grid item xs={12}>
+          {/* Show/hide pets button */}
+          <button onClick={() => setShowPets(!showPets)}>
+          { showPets ? "Show pets" : "Hide pets" }
+          </button> 
+        </Grid>
+        
         <Grid item container>
-          <Grid item xs={1} sm={2} /> {/* Padding on either side */}
+          {/* Pet cards */}
+          <Grid item xs={0} sm={2} /> {/* Padding */}
           <Grid item xs={12} sm={8}>
-            <button onClick={() => setShowPets(!showPets)}>
-            { showPets ? "Show pets" : "Hide pets" }
-            </button> 
-          </Grid>
-          <Grid item xs={12} sm={12}>
           { showPets ? "" :  
-            (<Router>
-              <Switch>
-               <Route exact path="/" children={<PetList />} />
-               <Route path="/pet/:id" children={<Pet />} />
-              </Switch>
-             </Router>
-            )}
-          </Grid>
-          <Grid item xs={1} sm={2} /> {/* Padding on either side */}
+          (<Router>
+            <Switch>
+             <Route exact path="/" children={<PetList />} />
+             <Route path="/pet/:id" children={<Pet />} />
+            </Switch>
+           </Router>
+          )}
+          </Grid> 
+          <Grid item xs={0} sm={2} /> {/* Padding */}
         </Grid>
       </Grid>
     </div>

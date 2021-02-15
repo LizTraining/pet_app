@@ -6,6 +6,12 @@ import { useHistory } from "react-router-dom";
 import Bertie from "./Bertie.jpg";
 import Winston from "./Winston.jpg";
 import Molly from "./Molly.jpg";
+import Card from "@material-ui/core/Card";
+import CardHeader from "@material-ui/core/CardHeader";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import Typography from "@material-ui/core/Typography";
+import { Grid } from "@material-ui/core";
 
 
 const whichImage = (petId, image) => {
@@ -48,20 +54,25 @@ const Pet = () => {
       <div key={id}>
         {petDetails ? (
         <div> 
-            {/*<button onClick={()=>{showPetList()}}> Return to list </button>*/}
-            <button onClick={() => history.push(`/`)}> Return to list </button>
+          <button onClick={() => history.push(`/`)}> Return to list </button>
+            <Grid container direction = "column">
+            <Grid item xs={0} sm={2} /> {/* Padding */}
+              <Grid item xs={12} sm={8}>
+                <Card>
+                  <h1> {`id: ${petId}`} </h1> 
+                  <h1> {`Name: ${name}`} </h1>
+                  <h1> {`Age: ${age}`} </h1>
+                  <h1> {`Sex: ${sex}`} </h1> 
+                  <h1> {`Type: ${typeOfAnimal}`} </h1>
+                  <h1> {`Breed: ${breed}`} </h1>
+                  <h1> {`Colour: ${colour}`} </h1>
+                  <h1> {`Weight (kg): ${weightInKg}`} </h1> 
 
-            <h1> {`id: ${petId}`} </h1> 
-            <h1> {`Name: ${name}`} </h1>
-            <h1> {`Age: ${age}`} </h1>
-            <h1> {`Sex: ${sex}`} </h1> 
-            <h1> {`Type: ${typeOfAnimal}`} </h1>
-            <h1> {`Breed: ${breed}`} </h1>
-            <h1> {`Colour: ${colour}`} </h1>
-            <h1> {`Weight (kg): ${weightInKg}`} </h1> 
-            
-
-            <img src={whichImage(petId, image)} alt="" />            
+                  <img src={whichImage(petId, image)} alt="" />  
+               </Card> 
+             </Grid> 
+             <Grid item xs={0} sm={2} /> {/* Padding */}
+           </Grid>         
         </div>
         ) : (
             <CircularProgress />

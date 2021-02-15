@@ -4,6 +4,7 @@ import { CircularProgress } from "@material-ui/core";
 import PetCard from "./PetCard";
 import { Grid } from "@material-ui/core";
 
+
 const PetList = () => {
 
     const [pets, setPets] = useState();
@@ -19,9 +20,7 @@ const PetList = () => {
       (
       <div style = {{display: "flex", flexWrap: "wrap"}}>
           {pets.map((petDetails) => (
-            <Grid item xs={12} sm={2}>
               <PetCard petDetails={petDetails} />
-            </Grid>
           ))}
       </div>
       )
