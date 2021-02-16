@@ -12,7 +12,7 @@ import VisibilityOffTwoToneIcon from '@material-ui/icons/VisibilityOffTwoTone';
 
 const useStyles = makeStyles({
   buttonStyle: {
-    color: ""
+    fontFamily: "Cabin, sans-serif"
   }
 });
 

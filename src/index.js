@@ -15,8 +15,16 @@ const theme = createMuiTheme({
       light: "#e4ffff",
       main: "#b1ddd9",
       dark: "#81aba8"
-    } 
-  }
+    }
+  },
+  typography: {
+    h4: {
+      fontFamily: "Pacifico, cursive",
+    },
+    h5: {
+      fontFamily: "Cabin, sans-serif"
+    }
+  } 
 });
 
 const rootElement = document.getElementById("root");

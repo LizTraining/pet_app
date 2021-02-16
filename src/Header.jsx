@@ -2,10 +2,11 @@ import React from "react";
 import { AppBar, Toolbar, Typography } from "@material-ui/core";
 import PetsIcon from '@material-ui/icons/Pets';
 import { makeStyles } from "@material-ui/styles";
+import { Grid } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
-  typographyStyles: {
-    flex: 1
+  typographyStyle: {
+    marginLeft: "auto"
   }
 }));
 
@@ -14,10 +15,12 @@ const Header = () => {
     return (
       <AppBar position="static">
         <Toolbar>
-          <Typography align="left" className={classes.typographyStyles}>
-            Welcome to Pet App
+          <Typography variant="h4" align="left">
+            Pet App
           </Typography>
-          <PetsIcon />
+          <Grid item className={classes.typographyStyle}>
+            <PetsIcon />
+          </Grid>
         </Toolbar>
       </AppBar>
     );

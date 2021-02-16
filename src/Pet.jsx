@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { CircularProgress } from "@material-ui/core";
+import { CircularProgress, Typography, IconButton } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
 import Bertie from "./Bertie.jpg";
 import Winston from "./Winston.jpg";
 import Molly from "./Molly.jpg";
 import Card from "@material-ui/core/Card";
 import { makeStyles } from "@material-ui/styles";
+import ArrowDropUpTwoToneIcon from '@material-ui/icons/ArrowDropUpTwoTone';
 
 const useStyles = makeStyles(theme => ({
   media: {
@@ -57,21 +58,25 @@ const Pet = () => {
       <div key={id}>
         {petDetails ? (
         <div> 
-          <button onClick={() => history.push(`/`)}> Return to list </button>
-            
-                <Card>
-                  <h1> {`id: ${petId}`} </h1> 
-                  <h1> {`Name: ${name}`} </h1>
-                  <h1> {`Age: ${age}`} </h1>
-                  <h1> {`Sex: ${sex}`} </h1> 
-                  <h1> {`Type: ${typeOfAnimal}`} </h1>
-                  <h1> {`Breed: ${breed}`} </h1>
-                  <h1> {`Colour: ${colour}`} </h1>
-                  <h1> {`Weight (kg): ${weightInKg}`} </h1> 
+          <IconButton onClick={() => history.push(`/`)}> 
+            <ArrowDropUpTwoToneIcon />
+            Return to list 
+          </IconButton>
 
-                  <img src={whichImage(petId, image)} className={classes.media} alt="" />  
-               </Card> 
-                    
+          <Typography variant="h5">
+            <Card>
+              <h5> {`id: ${petId}`} </h5> 
+              <h5> {`Name: ${name}`} </h5>
+              <h5> {`Age: ${age}`} </h5>
+              <h5> {`Sex: ${sex}`} </h5> 
+              <h5> {`Type: ${typeOfAnimal}`} </h5>
+               <h5> {`Breed: ${breed}`} </h5>
+              <h5> {`Colour: ${colour}`} </h5>
+              <h5> {`Weight (kg): ${weightInKg}`} </h5> 
+
+               <img src={whichImage(petId, image)} className={classes.media} alt="" />  
+            </Card>    
+          </Typography>
         </div>
         ) : (
             <CircularProgress />
