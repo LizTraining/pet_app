@@ -7,11 +7,13 @@ import Bertie from "./Bertie.jpg";
 import Winston from "./Winston.jpg";
 import Molly from "./Molly.jpg";
 import Card from "@material-ui/core/Card";
-import CardHeader from "@material-ui/core/CardHeader";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import Typography from "@material-ui/core/Typography";
-import { Grid } from "@material-ui/core";
+import { makeStyles } from "@material-ui/styles";
+
+const useStyles = makeStyles(theme => ({
+  media: {
+    height: 400,
+  }
+}));
 
 
 const whichImage = (petId, image) => {
@@ -30,7 +32,8 @@ const whichImage = (petId, image) => {
 
 const Pet = () => {
     const { id } = useParams();
-    console.log("Pet!")
+    
+    const classes = useStyles();
 
     const [petDetails, setPetDetails] = useState();
 
@@ -66,7 +69,7 @@ const Pet = () => {
                   <h1> {`Colour: ${colour}`} </h1>
                   <h1> {`Weight (kg): ${weightInKg}`} </h1> 
 
-                  <img src={whichImage(petId, image)} alt="" />  
+                  <img src={whichImage(petId, image)} className={classes.media} alt="" />  
                </Card> 
                     
         </div>
