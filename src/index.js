@@ -23,6 +23,9 @@ const theme = createMuiTheme({
     },
     h5: {
       fontFamily: "Cabin, sans-serif"
+    },
+    h6: {
+      fontFamily: "Cabin, sans-serif"
     }
   } 
 });
