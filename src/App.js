@@ -9,16 +9,13 @@ import Box from "@material-ui/core/Box";
 import { makeStyles } from "@material-ui/core/styles";
 import VisibilityTwoToneIcon from '@material-ui/icons/VisibilityTwoTone';
 import VisibilityOffTwoToneIcon from '@material-ui/icons/VisibilityOffTwoTone';
-import { blue, purple } from "@material-ui/core/colors";
 
 const useStyles = makeStyles({
   buttonStyle: {
     fontFamily: "Cabin, sans-serif"
   },
   paperStyle: {
-    // color="primary" variant="main"
-    background: "linear-gradient{ 45deg, #00857 30%, #80e8dd 90% }"
-    //background: "blue"
+    background: "#e4ffff"
   }
 });
 
